@@ -1,0 +1,64 @@
+{
+  "name": "sfmc-df18demo",
+  "version": "1.0.0",
+  "description": "Getting Started with Marketing Cloud API Integrations - Dreamforce 2018",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "postinstall": "npm run-script build"
+  },
+  "engines": {
+    "node": "^9.3.0",
+    "npm": "^5.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanagama/sfmc-df18demo.git"
+  },
+  "keywords": [
+    "Salesforce",
+    "Marketing Cloud"
+  ],
+  "author": "Sanjay Nagamangalam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sanagama/sfmc-df18demo/issues"
+  },
+  "homepage": "https://github.com/sanagama/sfmc-df18demo#readme",
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/compression": "0.0.36",
+    "@types/errorhandler": "0.0.32",
+    "@types/express": "^4.16.0",
+    "@types/express-session": "^1.15.10",
+    "@types/jquery": "^3.5.5",
+    "@types/jwt-simple": "^0.5.33",
+    "@types/morgan": "^1.7.35",
+    "@types/node": "^10.17.50",
+    "@types/serve-favicon": "^2.2.30",
+    "@types/shortid": "0.0.29",
+    "@types/winston": "^2.4.4",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "errorhandler": "^1.5.0",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "helmet": "^3.13.0",
+    "jquery": "^3.5.1",
+    "jwt-simple": "^0.5.1",
+    "morgan": "^1.9.0",
+    "serve-favicon": "^2.5.0",
+    "shortid": "^2.2.13",
+    "sizzle": "^2.3.5",
+    "typescript": "^3.9.7",
+    "winston": "^3.1.0",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "@types/xml2js": "^0.4.7"
+  }
+}
