@@ -1,6 +1,7 @@
 body {
   font-size: 13px;
   margin-top: 4px;
+  overflow-y: auto
 }
 
 .scrolls {
