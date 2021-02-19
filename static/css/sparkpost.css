@@ -14,6 +14,14 @@ body {
   margin-bottom: 8px;
   margin-left: -50px; 
 }
+
+.threspercentage{
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  margin-left: -48px; 
+}
 .engagedbutton {
   background-color: #ED8358;
   border: none;
