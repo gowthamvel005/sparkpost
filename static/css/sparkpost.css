@@ -183,12 +183,46 @@ body {
   margin-left: 29px;
 }
 
+.e1labelheaderPage4Cent{
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  color: #16325c;
+  margin-left: 18px;
+}
+
 .e1labelheaderPage5 {
   font-weight: 700;
   font-size: 11px;
   letter-spacing: 1px;
   margin-bottom: 8px;
-  margin-left: 15px;
+}
+
+.e1labelheaderPage5Rules {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  margin-left: 12px;
+  margin-top: 12px;
+}
+
+.e1labelheaderPage5ERR{
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  margin-left:0px;
+}
+
+
+.e1labelheaderPage5CM{
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  margin-left: 0px;
 }
 
 .e1labelheaderPageERR {
@@ -882,10 +916,16 @@ svg text {
   margin-top: 35px;
 }
 
+.thresbtnsIS {
+  width: 35px;
+  height: 40px;
+}
+
 .thresbtnsforCM {
   width: 42px;
   height: 40px;
   margin-top: 0px;
+  margin-left: 27px;
 }
 
 .thresbtnsSpf{
@@ -1114,7 +1154,6 @@ svg text {
   width: 80px;
   border-style: solid;
   border-width: thin;
-  border-color: white;
   -webkit-filter: blur(0.5px);
   opacity: 0.2;
 }
@@ -1128,7 +1167,6 @@ svg text {
   width: 80px;
   border-style: solid;
   border-width: thin;
-  border-color: white;
   -webkit-filter: blur(0.5px);
   opacity: 0.2;
 }
@@ -1296,7 +1334,12 @@ svg text {
 }
 
 .paddingLeft15px {
-  padding-left: 30px;
+  padding-left: 40px;
+}
+
+.paddingLeft15pxbtn {
+  padding-left: 44px;
+  padding-top: 6px;
 }
 
 .checkboxs {
@@ -1361,15 +1404,17 @@ svg text {
 }
 
 .campaignStyle{
-  font-weight: 600;
+  font-weight: 700;
     color: #16325c;
     letter-spacing: 0px;
-    margin-left: 15px;
+    margin-left: 0px;
 }
 
 .campaignStyleLabel{
   color: #16325c;
     letter-spacing: 0px;
+    margin-bottom: 16px;
+    font-weight: 600;
 }
 
 .backgroundColor{
