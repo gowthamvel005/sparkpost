@@ -1114,6 +1114,7 @@ svg text {
   width: 80px;
   border-style: solid;
   border-width: thin;
+  border-color: white;
   -webkit-filter: blur(0.5px);
   opacity: 0.2;
 }
@@ -1127,6 +1128,7 @@ svg text {
   width: 80px;
   border-style: solid;
   border-width: thin;
+  border-color: white;
   -webkit-filter: blur(0.5px);
   opacity: 0.2;
 }
