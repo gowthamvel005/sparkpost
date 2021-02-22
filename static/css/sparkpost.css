@@ -1155,8 +1155,9 @@ svg text {
   border-style: solid;
   border-width: thin;
   border-color: white;
-  -webkit-filter: blur(0.5px);
-  opacity: 0.2;
+   color: white;
+ /*-webkit-filter: blur(0.5px); 
+  opacity:0.2.px */ 
 }
 
 .inboxRange2{
@@ -1169,8 +1170,9 @@ svg text {
   border-style: solid;
   border-width: thin;
   border-color: white;
-  -webkit-filter: blur(0.5px);
-  opacity: 0.2;
+  /*-webkit-filter: blur(0.5px); 
+  opacity:0.2.px */
+  color: white;
 }
 
 
