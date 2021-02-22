@@ -617,12 +617,10 @@
       ) {
         //var Numinboxrange=parseInt(inboxrange);
 
-        var ForFifty = Math.round(parseInt(inboxrange) / 2 + 50 - 0.2);
-        var engagementForFifty = Math.round(
-          parseInt(engagementrange) / 2 + 50 - 0.2
-        );
-        var SPFForFifty = Math.round(parseInt(SPFrange) / 2 + 50 - 0.2);
-        var DKIMForFifty = Math.round(parseInt(DKIMrange) / 2 + 50 - 0.2);
+        var ForFifty = Math.round(parseInt(inboxrange));
+        var engagementForFifty = Math.round(parseInt(engagementrange));
+        var SPFForFifty = Math.round(parseInt(SPFrange));
+        var DKIMForFifty = Math.round(parseInt(DKIMrange));
         var thisdata = this;
 
         if (modelname == "1") {
@@ -668,7 +666,7 @@
                       data-placement="right"
                       title={inboxrange}
                       name="inboxrange"
-                      min="1"
+                      min="50"
                       max="100"
                       value={inboxrange}
                       onChange={changehandler}
@@ -709,7 +707,7 @@
                 <div class="row">
                   <div class="col-md-1"></div>
                   <div class="col-md-9 float-left">
-                    <label class="threspercentage">50%</label>
+                    <label class="threspercentage">0%</label>
                   </div>
                   <div class="col-md-1">
                     <label class="e1labelheaderPage4 float-left" style={{ "margin-left": "15px"}}>100%</label>
@@ -768,7 +766,7 @@
                 <div class="row">
                   <div class="col-md-1"></div>
                   <div class="col-md-9 float-left">
-                    <label class="threspercentage">50%</label>
+                    <label class="threspercentage">90%</label>
                   </div>
                   <div class="col-md-1">
                     <label class="e1labelheaderPage4 float-left" style={{ "margin-left": "15px"}}>100%</label>
@@ -786,7 +784,7 @@
                       data-placement="right"
                       title={SPFrange}
                       name="SPFrange"
-                      min="1"
+                      min="90"
                       max="100"
                       value={SPFrange}
                       onChange={changehandler}
@@ -828,7 +826,7 @@
                 <div class="row">
                   <div class="col-md-1"></div>
                   <div class="col-md-9 float-left">
-                    <label class="threspercentage">50%</label>
+                    <label class="threspercentage">90%</label>
                   </div>
                   <div class="col-md-1">
                     <label class="e1labelheaderPage4 float-left" style={{ "margin-left": "15px"}}>100%</label>
@@ -846,7 +844,7 @@
                       data-placement="right"
                       title={DKIMrange}
                       name="DKIMrange"
-                      min="1"
+                      min="90"
                       max="100"
                       value={DKIMrange}
                       onChange={changehandler}
@@ -878,7 +876,7 @@
                 </div>
                 <div class="modal-body">
                   <div>
-                    <div class="row paddingLeft15px">
+                    <div class="row ">
                       <div class="col-md-1  ">
                         <img
                           class="thresbtnsforCM"
@@ -888,7 +886,7 @@
 
                       <div class="col-md-10">
                         <div>
-                          <label class="e1labelheaderPage5 campaignStyleLabel">
+                          <label class="e1labelheaderPage5CM campaignStyleLabel">
                             {" "}
                             Please select a{" "}
                             <strong>Campaign Vol. Minimum</strong> for all
@@ -903,12 +901,12 @@
                           </label>
                         </div>
 
-                        <div class="row paddingLeft15px">
+                        <div class="row">
                           <div class="col-md-10 campaignStyle">
                             Campaign Vol. Minimum
                           </div>
                         </div>
-                        <div class="row paddingLeft15px">
+                        <div class="row">
                           <input
                             type="text"
                             class="rulesTextBoxStyle"
@@ -1094,24 +1092,22 @@
                   </label>
                 </div>
                 <div class="modal-body">
-                  <div>
-                    <div class="row paddingLeft15px">
+                  <div col-md-1>
+                    
+                  <div style={{ "margin-left": "30px"}}>
+                    
+                    <div class="row">
                       <div class="col-md-11 float-left ">
-                        <label class="e1labelheaderPage5 float-left">
+                        <img class="thresbtnsIS float-left" src="/images/intelliseed_idle.png"/>
+                        <label class="e1labelheaderPage5Rules float-left">
                           {" "}
                           Please select available seed lists to include in your
                           campaign rules
                         </label>
                       </div>
                     </div>
-                    <div class="row paddingLeft15px">
-                      <div class="col-md-11">
-                        <select class="e1inputdd marginBotton10px">
-                          <option>North America -Unengaged</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="row paddingLeft15px">
+                    {GetRulesIndexModalSection()}
+                    <div class="row paddingLeft15pxbtn">
                       <div class="col-md-11 float-left">
                         <button
                           class="btn btn-primary btn-xs marginleft2per"
@@ -1122,6 +1118,7 @@
                       </div>
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
             );
@@ -1405,12 +1402,13 @@
 
       function GetRulesIndexModalSection() {
         return (
-          <div class="row">
-            <div class="col-md-1"></div>
+          <div class="row paddingLeft15px">
             <div class="col-md-11">
-              <select class="e1inputdd marginBotton10px">
-                <option>North America -Unengaged</option>
-              </select>
+              <table class="e1inputdd marginBotton10px">
+                <tr>
+                <td>North America -Unengaged</td>
+                </tr>
+              </table>
             </div>
           </div>
         );
@@ -1611,14 +1609,14 @@
         } else {
           if (blnstatus == true) {
             return (
-              <div class="divHead" value={blnstatus} name={emtname} onClick={changehandler}>
+              <div class="divHead" value={blnstatus} name={emtname}>
                 <div class="divOne">
-                  <span class={classname} onClick={changehandler} value={blnstatus}>
+                  <span class={classname} value={blnstatus}>
                     AND
                   </span>
                 </div>
                 <div class="divTwo">
-                  <span class={classname} onClick={changehandler} value={blnstatus}>
+                  <span class={classname} value={blnstatus}>
                     OR
                   </span>
                 </div>
@@ -1679,14 +1677,14 @@
             modalClicked: false,
             modalVisible2: false,
             modalheader: "",
-            inboxrange: 0,
-            inboxrangelabel: 0,
-            engagementrange: 0,
-            engagementrangelabel: 0,
-            SPFrange: 0,
-            SPFrangelabel: 0,
-            DKIMrange: 0,
-            DKIMrangelabel: 0,
+            inboxrange: 50,
+            inboxrangelabel: 1,
+            engagementrange: 1,
+            engagementrangelabel: 1,
+            SPFrange: 90,
+            SPFrangelabel: 1,
+            DKIMrange: 90,
+            DKIMrangelabel: 1,
             modalName: "1",
             domain: "",
             domaindeliverability: null,
@@ -1987,16 +1985,16 @@
                 values: {
                   "Domain ID": thisdata.state.domain,
                   "Inbox Threshold": Math.round(
-                    parseInt(thisdata.state.inboxrange) / 2 + 50 - 0.2
+                    parseInt(thisdata.state.inboxrange)
                   ),
                   "Engagement Threshold": Math.round(
-                    parseInt(thisdata.state.inboxrange) / 2 + 50 - 0.2
+                    parseInt(thisdata.state.engagementrange)
                   ),
                   "SPF Threshold": Math.round(
-                    parseInt(thisdata.state.inboxrange) / 2 + 50 - 0.2
+                    parseInt(thisdata.state.SPFrange)
                   ),
                   "DKIM Threshold": Math.round(
-                    parseInt(thisdata.state.inboxrange) / 2 + 50 - 0.2
+                    parseInt(thisdata.state.DKIMrange)
                   ),
                   "Campaign Min": thisdata.state.rulesMdlCampaignMinVal,
                   "Intelliseed Lists": "North America -Unengaged",
@@ -2101,7 +2099,7 @@
           if (nam == "inboxrange") {
             if (val != "" && val != " " && val != null) {
               this.setState({ inboxrange: val }); // Inbox Range Value
-              var marginLeft = val + "%";
+              var marginLeft = val != 1 ? (val - 50) * 2 + "%" : 1 + "%";
               this.setState({ inboxrangelabel: marginLeft }); //Inbox Range Label
 
               //Inputs
@@ -2111,9 +2109,9 @@
 
           if (nam == "engagementrange") {
             if (val != "" && val != " " && val != null) {
-              this.setState({ engagementrange: val }); // Inbox Range Value
+              this.setState({ engagementrange: val });
               var marginLeft = val + "%";
-              this.setState({ engagementrangelabel: marginLeft }); //Inbox Range Label
+              this.setState({ engagementrangelabel: marginLeft });
 
               //Inputs
               this.setState({ btn2data: val });
@@ -2122,9 +2120,12 @@
 
           if (nam == "SPFrange") {
             if (val != "" && val != " " && val != null) {
-              this.setState({ SPFrange: val }); // Inbox Range Value
-              var marginLeft = val + "%";
-              this.setState({ SPFrangelabel: marginLeft }); //Inbox Range Label
+              this.setState({ SPFrange: val });
+              var marginLeft =
+                val != 100
+                  ? Math.round((val % 10) * 10 - 0.5) + "%"
+                  : 97.1 + "%";
+              this.setState({ SPFrangelabel: marginLeft });
 
               //Inputs
               this.setState({ btn3data: val });
@@ -2134,7 +2135,11 @@
           if (nam == "DKIMrange") {
             if (val != "" && val != " " && val != null) {
               this.setState({ DKIMrange: val }); // Inbox Range Value
-              var marginLeft = val + "%";
+              var marginLeft =
+                val != 100
+                  ? Math.round((val % 10) * 10 - 0.5) + "%"
+                  : 97.1 + "%";
+
               this.setState({ DKIMrangelabel: marginLeft }); //Inbox Range Label
 
               //Inputs
@@ -2571,9 +2576,7 @@
                                 />
                               </a>
                               <p class="inboxRange">
-                                {Math.round(
-                                  parseInt(this.state.inboxrange) / 2 + 50 - 0.2
-                                )}
+                                {Math.round(parseInt(this.state.inboxrange))}
                               </p>
                             </div>
                             <div class="textAlignCenter">
@@ -2617,7 +2620,9 @@
                                   src={this.state.imageEngagementReadRate}
                                 />
                               </a>
-                              <p class="inboxRange2">98</p>
+                              <p class="inboxRange2">
+                                {this.state.engagementrange}
+                              </p>
                             </div>
                             <div class="textAlignCenter">
                               <label class="e1labelheaderPageERR">
@@ -2913,19 +2918,23 @@
                     <div class="col-md-7 ">
                       <label class="e1labelheaderPage3">SSO ACCESS</label>
                     </div>
-                    <div class="col-md-5">Inbox:&gt;98%</div>
+                    <div class="col-md-5">
+                      Inbox:&gt;{this.state.inboxrange}%
+                    </div>
                   </div>
                   <div class="row e1marginleft">
                     <div class="col-md-7 ">
                       <label>STATUS: ACTIVE</label>
                     </div>
-                    <div class="col-md-5">Engagement:&gt;.05%</div>
+                    <div class="col-md-5">
+                      Engagement:&gt;.{this.state.engagementrange}%
+                    </div>
                   </div>
                   <div class="row e1marginleft epaddingbottom12">
                     <div class="col-md-7 ">
                       <label>USER ID: {this.state.namex}</label>
                     </div>
-                    <div class="col-md-5">SPF:&gt;99.5%</div>
+                    <div class="col-md-5">SPF:&gt;{this.state.SPFrange}%</div>
                   </div>
 
                   <div class="row e1marginleft">
@@ -2933,7 +2942,7 @@
                       <br />
                     </div>
                     <div class="col-md-5 ">
-                      <label>DKIM:&gt;99.8%</label>
+                      <label>DKIM:&gt;{this.state.DKIMrange}%</label>
                       <br />
                       <br />
                     </div>
@@ -2952,7 +2961,9 @@
                       <br />
                     </div>
                     <div class="col-md-5 ">
-                      <label>Campaign Minimum : 3000</label>
+                      <label>
+                        Campaign Minimum : {this.state.rulesMdlCampaignMinVal}
+                      </label>
                       <br />
                       <br />
                     </div>
