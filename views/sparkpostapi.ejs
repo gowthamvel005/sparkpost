@@ -1611,14 +1611,14 @@
         } else {
           if (blnstatus == true) {
             return (
-              <div class="divHead" value={blnstatus} name={emtname}>
+              <div class="divHead" value={blnstatus} name={emtname} onClick={changehandler}>
                 <div class="divOne">
-                  <span class={classname} value={blnstatus}>
+                  <span class={classname} onClick={changehandler} value={blnstatus}>
                     AND
                   </span>
                 </div>
                 <div class="divTwo">
-                  <span class={classname} value={blnstatus}>
+                  <span class={classname} onClick={changehandler} value={blnstatus}>
                     OR
                   </span>
                 </div>
