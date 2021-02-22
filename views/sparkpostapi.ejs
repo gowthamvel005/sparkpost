@@ -1676,6 +1676,7 @@
             modalVisible: false,
             modalClicked: false,
             modalVisible2: false,
+            enagagementRangeChanges: false,
             modalheader: "",
             inboxrange: 50,
             inboxrangelabel: 1,
@@ -1735,7 +1736,11 @@
 
         openModal() {
           debugger;
-
+          console.log('modelenagagementRangeChanges:'+enagagementRangeChanges);
+         if(enagagementRangeChanges == true){
+         console.log('model2enagagementRangeChanges:'+enagagementRangeChanges);
+         this.setState({ classNameEngagementReadRate: "outderDiv1" });
+         }
           let intelliseedListsData = [
             {
               keys: {
@@ -2109,6 +2114,8 @@
 
           if (nam == "engagementrange") {
             if (val != "" && val != " " && val != null) {
+            this.setState({ enagagementRangeChanges: true});
+            console.log('enagagementRangeChanges:'+enagagementRangeChanges);
               this.setState({ engagementrange: val });
               var marginLeft = val + "%";
               this.setState({ engagementrangelabel: marginLeft });
