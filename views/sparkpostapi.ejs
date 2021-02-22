@@ -1741,18 +1741,24 @@
           debugger;
          if(this.state.enagagementRangeChange == true){
          console.log('model2enagagementRangeChanges:'+this.state.enagagementRangeChanges);
+         this.setState({
+                imageEngagementReadRate: "/images/engagement_light.png",
+              });
          this.setState({ classNameEngagementReadRate: "outderDiv1" });
          }
           if(this.state.inboxRangeChange == true){
          console.log('model2inboxRangeChanges:'+this.state.inboxRangeChange);
-          this.setState({ classNameIndex: "outderDiv1" });
+         this.setState({ imageIndex: "/images/inbox_light.png" });
+         this.setState({ classNameIndex: "outderDiv1" });
          }
          if(this.state.SPFRangeChange == true){
          console.log('model2SPFRangeChangeChanges:'+this.state.SPFRangeChangeRangeChange);
+         this.setState({ ImageSpf: "/images/spf_light.png" });
           this.setState({ classNameSpf: "outderDiv1" });
         }
          if(this.state.DKIMRangeChange == true){
          console.log('model2DKIMRangeChange:'+this.state.DKIMRangeChange);
+         this.setState({ imageDkim: "/images/dkim_light.png" });
          this.setState({ classNameDkim: "outderDiv1" });
          }
           let intelliseedListsData = [
