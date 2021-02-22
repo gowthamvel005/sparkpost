@@ -1676,7 +1676,10 @@
             modalVisible: false,
             modalClicked: false,
             modalVisible2: false,
-            enagagementRangeChanges: false,
+            enagagementRangeChange: false,
+            inboxRangeChange: false,
+            SPFRangeChange: false,
+            DKIMRangeChange: false,
             modalheader: "",
             inboxrange: 50,
             inboxrangelabel: 1,
@@ -1736,10 +1739,21 @@
 
         openModal() {
           debugger;
-          console.log('modelenagagementRangeChanges:'+this.state.enagagementRangeChanges);
-         if(this.state.enagagementRangeChanges == true){
+         if(this.state.enagagementRangeChange == true){
          console.log('model2enagagementRangeChanges:'+this.state.enagagementRangeChanges);
          this.setState({ classNameEngagementReadRate: "outderDiv1" });
+         }
+          if(this.state.inboxRangeChange == true){
+         console.log('model2inboxRangeChanges:'+this.state.inboxRangeChange);
+          this.setState({ classNameIndex: "outderDiv1" });
+         }
+         if(this.state.SPFRangeChange == true){
+         console.log('model2SPFRangeChangeChanges:'+this.state.SPFRangeChangeRangeChange);
+          this.setState({ classNameSpf: "outderDiv1" });
+        }
+         if(this.state.DKIMRangeChange == true){
+         console.log('model2DKIMRangeChange:'+this.state.DKIMRangeChange);
+         this.setState({ classNameDkim: "outderDiv1" });
          }
           let intelliseedListsData = [
             {
@@ -2103,6 +2117,8 @@
 
           if (nam == "inboxrange") {
             if (val != "" && val != " " && val != null) {
+            this.setState({ inboxRangeChange: true});
+            console.log('inboxRangeChanges:'+this.state.inboxRangeChange);
               this.setState({ inboxrange: val }); // Inbox Range Value
               var marginLeft = val != 1 ? (val - 50) * 2 + "%" : 1 + "%";
               this.setState({ inboxrangelabel: marginLeft }); //Inbox Range Label
@@ -2114,8 +2130,8 @@
 
           if (nam == "engagementrange") {
             if (val != "" && val != " " && val != null) {
-            this.setState({ enagagementRangeChanges: true});
-            console.log('enagagementRangeChanges:'+this.state.enagagementRangeChanges);
+            this.setState({ enagagementRangeChange: true});
+            console.log('enagagementRangeChanges:'+this.state.enagagementRangeChange);
               this.setState({ engagementrange: val });
               var marginLeft = val + "%";
               this.setState({ engagementrangelabel: marginLeft });
@@ -2127,6 +2143,8 @@
 
           if (nam == "SPFrange") {
             if (val != "" && val != " " && val != null) {
+             this.setState({ SPFRangeChange: true});
+            console.log('SPFRangeChange:'+this.state.SPFRangeChange);
               this.setState({ SPFrange: val });
               var marginLeft =
                 val != 100
@@ -2141,6 +2159,8 @@
 
           if (nam == "DKIMrange") {
             if (val != "" && val != " " && val != null) {
+            this.setState({ DKIMRangeChange: true});
+            console.log('DKIMRangeChanges:'+this.state.DKIMRangeChange);
               this.setState({ DKIMrange: val }); // Inbox Range Value
               var marginLeft =
                 val != 100
