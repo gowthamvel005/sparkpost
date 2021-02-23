@@ -1189,7 +1189,7 @@ svg text {
   border-width: thin;
   border-color: white;
   height:20px;
-
+  color:white;
 }
 
 .inboxRange2{
@@ -1228,7 +1228,7 @@ svg text {
   border-style: solid;
   border-width: thin;
   border-color: white;
-   color: white;
+  color: white;
   height:20px;
 
 }
