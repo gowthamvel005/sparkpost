@@ -2632,7 +2632,11 @@
                                   src={this.state.imageIndex}
                                 />
                               </a>
-                              {this.state.ClassNameIndexBox ? {this.state.ClassNameIndexDomain ? <p class="inboxRangewhite"></p> : null } <p class="inboxRangewhite"><span> > </span>   {Math.round(parseInt(this.state.inboxrange))}% </p> :<p class="inboxRange"></p> }
+                              if(this.state.ClassNameIndexDomain){
+                              <p class="inboxRangewhite"></p>
+                              }else{
+                              {this.state.ClassNameIndexBox ?  <p class="inboxRangewhite"><span> > </span>   {Math.round(parseInt(this.state.inboxrange))}% </p> :<p class="inboxRange"></p> }
+                             }
                             </div>
                             <div class="textAlignCenter">
                               <label class="e1labelheaderPage4">Inbox</label>
