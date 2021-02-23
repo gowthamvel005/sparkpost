@@ -1154,10 +1154,20 @@ svg text {
   width: 80px;
   border-style: solid;
   border-width: thin;
+ -webkit-filter: blur(0.5px); 
+  opacity:0.2;  
+}
+.inboxRangewhite{
+  margin-left: 15px;
+  text-align: center;
+  /* background: aqua; */
+  border-radius: 12px;
+  width: 80px;
+  border-style: solid;
+  border-width: thin;
   border-color: white;
    color: white;
- /*-webkit-filter: blur(0.5px); 
-  opacity:0.2.px */ 
+
 }
 
 .inboxRange2{
@@ -1169,10 +1179,20 @@ svg text {
   width: 80px;
   border-style: solid;
   border-width: thin;
-  border-color: white;
-  /*-webkit-filter: blur(0.5px); 
-  opacity:0.2.px */
-  color: white;
+  -webkit-filter: blur(0.5px); 
+  opacity:0.2;
+}
+.inboxRange2white{
+  margin-top: 5px;
+  margin-left: 15px;
+  text-align: center;
+  /* background: aqua; */
+  border-radius: 12px;
+  width: 80px;
+  border-style: solid;
+  border-width: thin;
+   border-color: white;
+   color: white;
 }
 
 
