@@ -1698,7 +1698,7 @@
             classNameDkim: "outderDiv",
             classNameMinValume: "outderDiv",
             classNameCampaignMin: "outderDiv",
-
+            ClassNameIndexBox: "inboxRange",
             indextoggle: false,
             engagementtoggle: false,
             spftoggle: false,
@@ -1750,6 +1750,7 @@
          console.log('model2inboxRangeChanges:'+this.state.inboxRangeChange);
          this.setState({ imageIndex: "/images/inbox_light.png" });
          this.setState({ classNameIndex: "outderDiv1" });
+         this.setState({ ClassNameIndexBox: !this.state.ClassNameIndexBox});
          }
          if(this.state.SPFRangeChange == true){
          console.log('model2SPFRangeChangeChanges:'+this.state.SPFRangeChangeRangeChange);
@@ -2608,9 +2609,7 @@
                                   src={this.state.imageIndex}
                                 />
                               </a>
-                              <p class="inboxRange">
-                              <span> > </span>   {Math.round(parseInt(this.state.inboxrange))}%
-                              </p>
+                              {this.state.ClassNameIndexBox ? <p class="inboxRangewhite"><span> > </span>   {Math.round(parseInt(this.state.inboxrange))}% </p> :<p class="inboxRange"></p> }
                             </div>
                             <div class="textAlignCenter">
                               <label class="e1labelheaderPage4">Inbox</label>
