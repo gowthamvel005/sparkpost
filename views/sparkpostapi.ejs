@@ -1700,15 +1700,13 @@
             classNameMinValume: "outderDiv",
             classNameCampaignMin: "outderDiv",
             classNameIndexBoxvisible: "inboxRange",
+            classNameEnagagementBoxvisible: "inboxRange2",
+            classNameSPFBoxvisible: "inboxRange2",
             ClassNameIndexBox: false,
             classNameEngagementBox: false,
             classNameSpfBox: false,
             classNameDkimBox: false,
             classNameCampaignBox: false,
-            ClassNameIndexDomain:false,
-            ClassNameEngagementDomain:false,
-            ClassNameSPFDomain:false,
-            
             indextoggle: false,
             engagementtoggle: false,
             spftoggle: false,
@@ -1750,13 +1748,11 @@
         openModal() {
           debugger;
           if(this.state.inboxRangeChange == true){
-         this.setState({ClassNameIndexDomain: false});
          this.setState({ imageIndex: "/images/inbox_light.png" });
          this.setState({ classNameIndex: "outderDiv1" });
          this.setState({ ClassNameIndexBox: true});
          }
          if(this.state.enagagementRangeChange == true){
-         this.setState({ClassNameEngagementDomain: false});
          this.setState({
                 imageEngagementReadRate: "/images/engagement_light.png",
               });
@@ -1764,7 +1760,6 @@
          this.setState({ classNameEngagementBox: true});
          }
          if(this.state.SPFRangeChange == true){
-          this.setState({ClassNameSPFDomain: false});  
           this.setState({ ImageSpf: "/images/spf_light.png" });
           this.setState({ classNameSpf: "outderDiv1" });
           this.setState({ classNameSpfBox: true});
@@ -2292,6 +2287,7 @@
               this.setState({ classNameMinValume: "outderDiv" });
               this.setState({ classNameCampaignMin: "outderDiv" });
             } else if (val == "boxbe.com") {
+            this.setState({ classNameEnagagementBoxvisible: "inboxRangeemptywhite"});
               this.setState({ ClassNameEngagementDomain: true});
               this.setState({ imageIndex: "/images/inbox_idle.png" });
               this.setState({
@@ -2314,6 +2310,7 @@
               this.setState({ classNameMinValume: "outderDiv" });
               this.setState({ classNameCampaignMin: "outderDiv" });
             } else if (val == "email.gapfactory.com") {
+              this.setState({ classNameSPFBoxvisible: "inboxRangeemptywhite"});
               this.setState({ ClassNameSPFDomain: true});
               this.setState({ imageIndex: "/images/inbox_idle.png" });
               this.setState({
@@ -2678,7 +2675,7 @@
                                   src={this.state.imageEngagementReadRate}
                                 />
                               </a>
-                            {this.state.classNameEngagementBox ? <p class="inboxRange2white"><span> > </span>   {this.state.engagementrange}% </p> :<p class="inboxRange2"></p> }
+                            {this.state.classNameEngagementBox ? <p class="inboxRange2white"><span> > </span>   {this.state.engagementrange}% </p> :<p class={this.state.classNameEnagagementBoxvisible}></p> }
                             </div>
                             <div class="textAlignCenter">
                               <label class="e1labelheaderPageERR">
@@ -2710,7 +2707,7 @@
                               </a>
             
             
-                            {this.state.classNameSpfBox ? <p class="inboxRange2white"><span> > </span>   90% </p> :<p class="inboxRange2"></p> }
+                            {this.state.classNameSpfBox ? <p class="inboxRange2white"><span> > </span>   90% </p> :<p class={this.state.classNameSPFBoxvisible}></p> }
                             </div>
                             <div class="textAlignCenter">
                               <label class="e1labelheaderPage4">SPF</label>
