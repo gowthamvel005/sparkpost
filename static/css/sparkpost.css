@@ -1218,7 +1218,18 @@ svg text {
    color: white;
 }
 
+.inboxRange2emptywhite{
+    margin-top: 5px;
+  text-align: center;
+  /* background: aqua; */
+  border-radius: 12px;
+  width: 80px;
+  border-style: solid;
+  border-width: thin;
+  border-color: white;
+   color: white;
 
+}
 
 .divHead {
   display: flex;
