@@ -1704,6 +1704,10 @@
             classNameSpfBox: false,
             classNameDkimBox: false,
             classNameCampaignBox: false,
+            ClassNameIndexDomain:false,
+            ClassNameEngagementDomain:false,
+            ClassNameSPFDomain:false,
+            
             indextoggle: false,
             engagementtoggle: false,
             spftoggle: false,
@@ -1745,13 +1749,13 @@
         openModal() {
           debugger;
           if(this.state.inboxRangeChange == true){
-         console.log('model2inboxRangeChanges:'+this.state.inboxRangeChange);
+         this.setState({ClassNameIndexDomain: false});
          this.setState({ imageIndex: "/images/inbox_light.png" });
          this.setState({ classNameIndex: "outderDiv1" });
          this.setState({ ClassNameIndexBox: true});
          }
          if(this.state.enagagementRangeChange == true){
-         console.log('model2enagagementRangeChanges:'+this.state.enagagementRangeChanges);
+         this.setState({ClassNameEngagementDomain: false});
          this.setState({
                 imageEngagementReadRate: "/images/engagement_light.png",
               });
@@ -1759,8 +1763,8 @@
          this.setState({ classNameEngagementBox: true});
          }
          if(this.state.SPFRangeChange == true){
-         console.log('model2SPFRangeChangeChanges:'+this.state.SPFRangeChangeRangeChange);
-         this.setState({ ImageSpf: "/images/spf_light.png" });
+          this.setState({ClassNameSPFDomain: false});  
+          this.setState({ ImageSpf: "/images/spf_light.png" });
           this.setState({ classNameSpf: "outderDiv1" });
           this.setState({ classNameSpfBox: true});
         }
@@ -2264,7 +2268,7 @@
           if (nam == "domain") {
             debugger;
             if (val == "email.gap.com") {
-               this.setState({ ClassNameIndexBox: true});
+               this.setState({ ClassNameIndexDomain: true});
            this.setState({ imageIndex: "/images/inbox_light.png" });
               this.setState({
                 imageEngagementReadRate: "/images/engagement_idle.png",
@@ -2286,7 +2290,7 @@
               this.setState({ classNameMinValume: "outderDiv" });
               this.setState({ classNameCampaignMin: "outderDiv" });
             } else if (val == "boxbe.com") {
-              this.setState({ classNameEngagementBox: true});
+              this.setState({ ClassNameEngagementDomain: true});
               this.setState({ imageIndex: "/images/inbox_idle.png" });
               this.setState({
                 imageEngagementReadRate: "/images/engagement_light.png",
@@ -2308,7 +2312,7 @@
               this.setState({ classNameMinValume: "outderDiv" });
               this.setState({ classNameCampaignMin: "outderDiv" });
             } else if (val == "email.gapfactory.com") {
-              this.setState({ classNameSpfBox: true});
+              this.setState({ ClassNameSPFDomain: true});
               this.setState({ imageIndex: "/images/inbox_idle.png" });
               this.setState({
                 imageEngagementReadRate: "/images/engagement_idle.png",
@@ -2628,7 +2632,7 @@
                                   src={this.state.imageIndex}
                                 />
                               </a>
-                              {this.state.ClassNameIndexBox ? <p class="inboxRangewhite"><span> > </span>   {Math.round(parseInt(this.state.inboxrange))}% </p> :<p class="inboxRange"></p> }
+                              {this.state.ClassNameIndexBox ? {this.state.ClassNameIndexDomain ? <p class="inboxRangewhite"></p> : null } <p class="inboxRangewhite"><span> > </span>   {Math.round(parseInt(this.state.inboxrange))}% </p> :<p class="inboxRange"></p> }
                             </div>
                             <div class="textAlignCenter">
                               <label class="e1labelheaderPage4">Inbox</label>
