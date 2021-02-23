@@ -1699,6 +1699,7 @@
             classNameDkim: "outderDiv",
             classNameMinValume: "outderDiv",
             classNameCampaignMin: "outderDiv",
+            classNameIndexBoxvisible: "inboxRange",
             ClassNameIndexBox: false,
             classNameEngagementBox: false,
             classNameSpfBox: false,
@@ -2268,6 +2269,7 @@
           if (nam == "domain") {
             debugger;
             if (val == "email.gap.com") {
+            this.setstate({ classNameIndexBoxvisible: "inboxRangewhite"});
                this.setState({ ClassNameIndexDomain: true});
            this.setState({ imageIndex: "/images/inbox_light.png" });
               this.setState({
@@ -2632,9 +2634,7 @@
                                   src={this.state.imageIndex}
                                 />
                               </a>
-                              {this.state.ClassNameIndexDomain ? <p class="inboxRangewhite"></p>:null}
-                              {this.state.ClassNameIndexBox ?  <p class="inboxRangewhite"><span> > </span>   {Math.round(parseInt(this.state.inboxrange))}% </p> :null }
-                              {this.state.ClassNameIndexBox && this.state.ClassNameIndexDomain === false ?  <p class="inboxRange"></p> :null }
+                              {this.state.ClassNameIndexBox ?  <p class="inboxRangewhite"><span> > </span>   {Math.round(parseInt(this.state.inboxrange))}% </p> :<p class={this.state.classNameIndexBoxvisible}></p> }
                              
                             </div>
                             <div class="textAlignCenter">
