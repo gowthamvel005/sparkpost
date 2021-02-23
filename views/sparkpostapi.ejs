@@ -1699,6 +1699,9 @@
             classNameMinValume: "outderDiv",
             classNameCampaignMin: "outderDiv",
             ClassNameIndexBox: false,
+            classNameEngagementBox: false,
+            classNameSpfBox: false,
+            classNameDkimBox: false,
             indextoggle: false,
             engagementtoggle: false,
             spftoggle: false,
@@ -1739,28 +1742,31 @@
 
         openModal() {
           debugger;
+          if(this.state.inboxRangeChange == true){
+         console.log('model2inboxRangeChanges:'+this.state.inboxRangeChange);
+         this.setState({ imageIndex: "/images/inbox_light.png" });
+         this.setState({ classNameIndex: "outderDiv1" });
+         this.setState({ ClassNameIndexBox: true});
+         }
          if(this.state.enagagementRangeChange == true){
          console.log('model2enagagementRangeChanges:'+this.state.enagagementRangeChanges);
          this.setState({
                 imageEngagementReadRate: "/images/engagement_light.png",
               });
          this.setState({ classNameEngagementReadRate: "outderDiv1" });
-         }
-          if(this.state.inboxRangeChange == true){
-         console.log('model2inboxRangeChanges:'+this.state.inboxRangeChange);
-         this.setState({ imageIndex: "/images/inbox_light.png" });
-         this.setState({ classNameIndex: "outderDiv1" });
-         this.setState({ ClassNameIndexBox: !this.state.ClassNameIndexBox});
+         this.setState({ classNameEngagementBox: true});
          }
          if(this.state.SPFRangeChange == true){
          console.log('model2SPFRangeChangeChanges:'+this.state.SPFRangeChangeRangeChange);
          this.setState({ ImageSpf: "/images/spf_light.png" });
           this.setState({ classNameSpf: "outderDiv1" });
+          this.setState({ classNameSpfBox: true});
         }
          if(this.state.DKIMRangeChange == true){
          console.log('model2DKIMRangeChange:'+this.state.DKIMRangeChange);
          this.setState({ imageDkim: "/images/dkim_light.png" });
          this.setState({ classNameDkim: "outderDiv1" });
+         this.setState({ classNameDkimBox: true});
          }
           let intelliseedListsData = [
             {
@@ -2652,9 +2658,7 @@
                                   src={this.state.imageEngagementReadRate}
                                 />
                               </a>
-                              <p class="inboxRange2">
-                                <span> > </span> {this.state.engagementrange}%
-                              </p>
+                            {this.state.classNameEngagementBox ? <p class="inboxRange2white"><span> > </span>   {this.state.engagementrange}% </p> :<p class="inboxRange2"></p> }
                             </div>
                             <div class="textAlignCenter">
                               <label class="e1labelheaderPageERR">
@@ -2684,9 +2688,9 @@
                                   src={this.state.ImageSpf}
                                 />
                               </a>
-                            <p class="inboxRange2">
-                               <span> > </span>  90% 
-                              </p>  
+            
+            
+                            {this.state.classNameSpfBox ? <p class="inboxRange2white"><span> > </span>   90% </p> :<p class="inboxRange2"></p> }
                             </div>
                             <div class="textAlignCenter">
                               <label class="e1labelheaderPage4">SPF</label>
@@ -2729,9 +2733,7 @@
                                   src={this.state.imageDkim}
                                 />
                               </a>
-                              <p class="inboxRange2">
-                                <span> > </span> 90% 
-                              </p>  
+                              {this.state.classNameDkimBox ? <p class="inboxRange2white"><span> > </span>   90% </p> :<p class="inboxRange2"></p> }
                             </div>
                             <div class="textAlignCenter">
                               <label class="e1labelheaderPage4">DKIM</label>
