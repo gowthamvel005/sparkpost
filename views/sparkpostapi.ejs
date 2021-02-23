@@ -2264,7 +2264,8 @@
           if (nam == "domain") {
             debugger;
             if (val == "email.gap.com") {
-              this.setState({ imageIndex: "/images/inbox_light.png" });
+               this.setState({ ClassNameIndexBox: true});
+           this.setState({ imageIndex: "/images/inbox_light.png" });
               this.setState({
                 imageEngagementReadRate: "/images/engagement_idle.png",
               });
@@ -2285,6 +2286,7 @@
               this.setState({ classNameMinValume: "outderDiv" });
               this.setState({ classNameCampaignMin: "outderDiv" });
             } else if (val == "boxbe.com") {
+              this.setState({ classNameEngagementBox: true});
               this.setState({ imageIndex: "/images/inbox_idle.png" });
               this.setState({
                 imageEngagementReadRate: "/images/engagement_light.png",
@@ -2306,6 +2308,7 @@
               this.setState({ classNameMinValume: "outderDiv" });
               this.setState({ classNameCampaignMin: "outderDiv" });
             } else if (val == "email.gapfactory.com") {
+              this.setState({ classNameSpfBox: true});
               this.setState({ imageIndex: "/images/inbox_idle.png" });
               this.setState({
                 imageEngagementReadRate: "/images/engagement_idle.png",
@@ -2796,7 +2799,7 @@
                                   src={this.state.imageMinValume}
                                 />
                               </a>
-                             {this.state.classNameCampaignBox ? <p class="inboxRange2white"><span> > </span>   {this.state.rulesMdlCampaignMinVal} </p> :<p class="inboxRange2"></p> }  
+                             {this.state.classNameCampaignBox ? <p class="inboxRange2white">{this.state.rulesMdlCampaignMinVal} </p> :<p class="inboxRange2"></p> }  
                             </div>
                             <div class="textAlignCenter">
                               <label class="e1labelheaderPage4">
