@@ -1219,7 +1219,8 @@ svg text {
 }
 
 .inboxRange2emptywhite{
-    margin-top: 5px;
+  margin-top: 5px;
+  margin-left: 15px;
   text-align: center;
   /* background: aqua; */
   border-radius: 12px;
@@ -1228,6 +1229,7 @@ svg text {
   border-width: thin;
   border-color: white;
    color: white;
+  height:20px;
 
 }
 
