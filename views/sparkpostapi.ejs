@@ -1680,6 +1680,7 @@
             inboxRangeChange: false,
             SPFRangeChange: false,
             DKIMRangeChange: false,
+            CampaignChange:false,
             modalheader: "",
             inboxrange: 50,
             inboxrangelabel: 1,
@@ -1702,6 +1703,7 @@
             classNameEngagementBox: false,
             classNameSpfBox: false,
             classNameDkimBox: false,
+            classNameCampaignBox: false,
             indextoggle: false,
             engagementtoggle: false,
             spftoggle: false,
@@ -1767,6 +1769,11 @@
          this.setState({ imageDkim: "/images/dkim_light.png" });
          this.setState({ classNameDkim: "outderDiv1" });
          this.setState({ classNameDkimBox: true});
+         }
+         if(this.state.CampaignChange == true){
+         this.setState({ imageMinValume: "/images/campaign_min_light.png" });
+         this.setState({ classNameMinValume: "campaignoutderDiv" });
+         this.setState({ classNameCampaignBox: true});
          }
           let intelliseedListsData = [
             {
@@ -2198,7 +2205,10 @@
           }
 
           if (nam == "rulesMdlCampaignMinVal") {
-            this.setState({ rulesMdlCampaignMinVal: val });
+          if(val != ""  && val != null) {
+          this.setState({CampaignChange: true});
+          this.setState({ rulesMdlCampaignMinVal: val });
+          }
           }
 
           if (nam == "rulesMdlFilterByRegion") {
@@ -2786,6 +2796,7 @@
                                   src={this.state.imageMinValume}
                                 />
                               </a>
+                             {this.state.classNameCampaignBox ? <p class="inboxRange2white"><span> > </span>   {this.state.rulesMdlCampaignMinVal} </p> :<p class="inboxRange2"></p> }  
                             </div>
                             <div class="textAlignCenter">
                               <label class="e1labelheaderPage4">
