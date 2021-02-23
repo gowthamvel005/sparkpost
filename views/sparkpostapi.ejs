@@ -1707,6 +1707,7 @@
             classNameSpfBox: false,
             classNameDkimBox: false,
             classNameCampaignBox: false,
+            classNameIntelliseedBox: false,
             indextoggle: false,
             engagementtoggle: false,
             spftoggle: false,
@@ -1744,7 +1745,11 @@
           );
           //this.onChangeValue = this.onChangeValue.bind(this);
         }
-
+       function Intelliseedtogglechanges(classname){
+       if(classname == 'IntelliseedChange'){
+       this.setState({ classNameIntelliseedBox: true});
+       }
+       }
         openModal() {
           debugger;
           if(this.state.inboxRangeChange == true){
@@ -1774,6 +1779,10 @@
          this.setState({ imageMinValume: "/images/campaign_min_light.png" });
          this.setState({ classNameMinValume: "campaignoutderDiv" });
          this.setState({ classNameCampaignBox: true});
+         }
+         if(this.state.classNameIntelliseedBox == true){
+         this.setState({ imageCampaignMin: "/images/intelliseed_light.png.png" });
+         this.setState({ classNameCampaignMin: "campaignoutderDiv" });
          }
           let intelliseedListsData = [
             {
